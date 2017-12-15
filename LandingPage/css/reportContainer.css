@@ -1,0 +1,162 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #888;
+    /* line-height: 30px; */
+    /* text-align: center; */
+}
+/* /////////////////////////////////////////////////////////// */
+
+section {
+    height: 90vh;
+    }
+
+/* #reportProblem{
+ /* border: 1px solid yellow; */
+/* }  */
+
+
+img{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    width: 100px;
+    height: 80px;
+}
+
+.movie-container {
+    height: 80px;
+    opacity: 0.9;
+    background: #33495E; 
+    margin-top: 20px;
+}
+
+.left-column {
+    width: 88px;
+    float: left;
+}
+
+.right-column {
+    margin-left: 88px;
+    padding: 10px;
+    height: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.content.description {
+  /*  color: #9d99a7;*/
+    height: 85px;
+    margin-top: 15px;
+    margin-left:30px;
+}
+
+
+.wrapper{
+	position:relative;	
+}
+
+.left {
+ width: 40%;
+ float:left;
+ height: 90%;
+ padding-right: 10px;
+ padding-left: 10px;
+ overflow-y: scroll;
+ overflow-x: hidden;
+ margin-top: 2.5%;
+}
+
+
+.right {
+    /*border: 1px solid green;*/
+    padding-right: 10px;
+    width: 60%;
+    float:right;
+    height: 90%;
+    margin-top: 2.5%;
+    /*border: 1px solid green;*/
+}
+
+#map {
+    background-color: #33495E;
+    height:100%;
+    width: 100%;
+	/* border: 1px solid #C619CE; */
+}
+
+
+.top{
+	height: 300px;
+	width: 100%;
+	/*border: 1px solid green;*/
+	
+}
+
+.bottom{
+	/*border: 1px solid red;*/
+	width: 100%;
+	height: 60%;
+	bottom: 100%;
+
+}
+#bg_color{
+
+    background-color: #33495E;
+}
+
+/******** navbar section css********/
+header {
+	left: 0;
+	position: absolute;
+	top: 0;
+	padding-top: 10px;
+	width: 100%;
+	z-index: 1000;
+	color: #33495E;
+}
+
+ul.navbar-nav {
+	padding-top: 12px;
+}
+
+.navbar-nav > li > a {
+	color: #fff;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: 18px;
+	letter-spacing: 1px;
+
+}
+
+.nav > li > a:focus {
+	background: #00C6FF;
+}
+
+.navbar-nav > li > a:hover, .navbar-nav  li.active a{
+	background: none;
+	color: #00C6FF;
+}
+
+
+.navbar-toggle {
+	background-color: #00C6FF;
+}
+
+.navbar-toggle .icon-bar {
+	background-color: #33495E;
+}
+.navbar-collapse.in {
+	overflow-y: auto;
+	background: #33495E;
+}
+.is-sticky .navi {
+	background: #33495E;
+}
+section{
+	padding: 80px 0;
+}

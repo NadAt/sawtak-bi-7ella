@@ -1,0 +1,460 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    /* color: #888; */
+    line-height: 30px;
+	text-align: center;
+	background-color: #33495E;
+	/* !important; */
+}
+
+strong { font-weight: 500; }
+
+a, a:hover, a:focus {
+	color: #4aaf51;
+	text-decoration: none;
+    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+}
+
+h1, h2 {
+	margin-top: 10px;
+	font-size: 38px;
+    font-weight: 100;
+    color: #000;
+    line-height: 50px;
+}
+
+h3 {
+	font-size: 22px;
+    font-weight: 300;
+    color: #000;
+    line-height: 30px;
+}
+
+
+
+img { max-width: 100%; }
+
+::-moz-selection { background: #4aaf51; color: #fff; text-shadow: none; }
+::selection { background: #4aaf51; color: #fff; text-shadow: none; }
+
+.btn-link-1 {
+	display: inline-block;
+	height: 50px;
+	margin: 5px;
+	padding: 16px 20px 0 5px;
+	background: #4aaf51;
+	font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    color: #fff;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+}
+.btn-link-1:hover, .btn-link-1:focus, .btn-link-1:active { outline: 0; opacity: 0.6; color: #fff; }
+
+.btn-link-1.btn-link-1-facebook { background: #4862a3; }
+.btn-link-1.btn-link-1-twitter { background: #55acee; }
+.btn-link-1.btn-link-1-google-plus { background: #dd4b39; }
+
+.btn-link-1 i {
+	padding-right: 5px;
+	vertical-align: middle;
+	font-size: 20px;
+	line-height: 20px;
+}
+
+.btn-link-2 {
+	display: inline-block;
+	height: 50px;
+	margin: 5px;
+	padding: 15px 20px 0 20px;
+	background: rgba(0, 0, 0, 0.3);
+	border: 1px solid #fff;
+	font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    color: #fff;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+}
+.btn-link-2:hover, .btn-link-2:focus, 
+.btn-link-2:active, .btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); color: #fff; }
+
+
+/***** Top content *****/
+
+.inner-bg {
+    padding: 100px 0 170px 0;
+}
+
+.top-content .text {
+	color: #fff;
+}
+
+.top-content .text h1 { color: #fff; }
+
+.top-content .description {
+	margin: 20px 0 10px 0;
+}
+
+.top-content .description p { opacity: 0.8; }
+
+.top-content .description a {
+	color: #fff;
+}
+.top-content .description a:hover, 
+.top-content .description a:focus { border-bottom: 1px dotted #fff; }
+
+.form-box {
+	margin-top: 35px;
+}
+
+.form-top {
+	overflow: hidden;
+	padding: 0 25px 15px 25px;
+	background: #fff;
+	-moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
+	text-align: left;
+}
+
+.form-top-left {
+	float: left;
+	width: 90%;
+	padding-top: 25px;
+}
+
+.form-top-left h3 { margin-top: 0; }
+
+.form-top-right {
+	float: left;
+	width: 25%;
+	padding-top: 5px;
+	font-size: 66px;
+	color: #ddd;
+	line-height: 100px;
+	text-align: right;
+}
+
+.form-bottom {
+	padding: 25px 25px 30px 25px;
+	background: #eee;
+	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
+	text-align: left;
+}
+
+.form-bottom form textarea {
+	height: 100px;
+}
+
+.form-bottom form button.btn {
+	width: 100%;
+}
+
+.form-bottom form .input-error {
+	border-color: #4aaf51;
+}
+
+.social-login {
+	margin-top: 35px;
+}
+
+.social-login h3 {
+	color: #fff;
+}
+
+.social-login-buttons {
+	margin-top: 25px;
+}
+
+
+/***** Media queries *****/
+
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+@media (max-width: 767px) {
+	
+	.inner-bg { padding: 60px 0 110px 0; }
+
+}
+
+@media (max-width: 415px) {
+	
+	h1, h2 { font-size: 32px; }
+
+}
+
+/******** navbar section css********/
+header {
+	left: 0;
+	position: absolute;
+	top: 0;
+	padding-top: 10px;
+	width: 100%;
+	z-index: 1000;
+	color: #fff;
+}
+
+ul.navbar-nav {
+	padding-top: 12px;
+}
+
+.navbar-nav > li > a {
+	color: #fff;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: 18px;
+	letter-spacing: 1px;
+
+}
+
+.nav > li > a:focus {
+	background: none;
+}
+
+.navbar-nav > li > a:hover, .navbar-nav  li.active a{
+	background: none;
+	color: #00C6FF;
+}
+
+.navbar-toggle {
+	background-color: #00C6FF;
+}
+
+.navbar-toggle .icon-bar {
+	background-color: #fff;
+}
+.navbar-collapse.in {
+	overflow-y: auto;
+	background: rgba(0,0,0,0.5);
+}
+.is-sticky .navi {
+	background: rgba(0,0,0,0.5);
+}
+section{
+	padding: 80px 0;
+}
+/*#common {
+	overflow: hidden;
+	border: 1px solid black;
+	border-top: 1px solid black;
+	
+}*/
+
+.wrapper{
+	position:relative;
+	margin-top: 5%;
+	
+}
+
+.left {
+	width:40%;
+	float: left;
+	/*border: 1px solid red;
+	border: 1px solid red;*/
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 565px;
+}
+
+
+.right {
+ /*border: 1px solid green;*/
+
+ width: 60%;
+ float:right;
+ height: 565px;
+ /*border: 1px solid green;*/
+}
+
+
+.top{
+	height: 300px;
+	width: 100%;
+	/*border: 1px solid green;*/
+	
+}
+
+.bottom{
+	/*border: 1px solid red;*/
+	width: 100%;
+	height: 60%;
+	bottom: 100%;
+	
+	
+}
+
+#map {
+	background-color: grey;
+	/*border: 1px solid black;*/
+	height: 100%;
+    width: 100%;
+}
+
+#reporttable{
+	width: 90%;
+	/* border: 10px solid red; */
+}
+
+.reportTable{	
+	height: auto;
+	/* border: 10px solid yellow; */
+}
+.reportText{
+	height: auto;
+	/*border: 1px solid yellow;*/
+}
+
+.comment-box{				
+	width: 100%;  
+	margin-bottom : 4px;
+	border-radius : 4px;
+}
+
+input{
+	outline: none;
+	border: none;
+	height:10%;
+	width:100%;
+
+}
+/* .col-sm-8 {
+	/* border-width: 0px 0px 1px;
+	margin-top: 0px;
+	width: 1562px; */
+	/* width: 500px !important; */
+	/* } */
+
+	.reportInfo{
+		margin: 0 auto;
+	}
+
+	/* ///////////////////////////////////////////////////////// */
+
+	/* Style the Image Used to Trigger the Modal */
+#imgs {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#imgs:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption { 
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+/* for image overlay --> when img is clicked open the original image */
+#overlay{
+    position: fixed; 
+    width: 100%; 
+    height: 100%; 
+    top: 0px; 
+    left: 0px; 
+    background-color: #000; 
+    opacity: 0.7;
+    filter: alpha(opacity = 70) !important;
+    display: none;
+    z-index: 100;
+    
+}
+
+#overlayContent{
+    position: fixed; 
+    width: 100%;
+    top: 100px;
+    text-align: center;
+    display: none;
+    overflow: hidden;
+    z-index: 100;
+}
+
+#contentGallery{
+    margin: 0px auto;
+}
+
+#imgBig, #i_image{
+    cursor: pointer;
+}
+
+
+
+
+
+
