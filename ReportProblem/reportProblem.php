@@ -94,7 +94,7 @@
 								  <form action ="DatabaseRP1.php" method = "post">
 								  
  									<label>
-									<h3> Summarize your problem</h3>
+									<h3> Title</h3>
 									</label>
 									 
 								
