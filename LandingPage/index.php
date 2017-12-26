@@ -146,7 +146,7 @@
             $imgArray = array();
             $reportIdArray = array();
             $reportSummary = array();
-            $userIdArray = array();
+            // $userIdArray = array();
             // $reportStatus= array();
             
 
@@ -159,7 +159,7 @@
                 $reportSummary[] = $row['report_text'];
                 $catArray[] = $row['category_name'];
                 $imgArray[] = $row['image'];
-                $userIdArray[] = $row['user_id'];
+                // $userIdArray[] = $row['user_id'];
                 // $reportStatus[] = $row['report_status'];
             }
 
@@ -196,7 +196,7 @@
                 var longArray = [<?php echo '"'.implode('","', $longArray).'"' ?>];
                 var catArray = [<?php echo '"'.implode('","', $catArray).'"' ?>]; 
                 var reportSummary = [<?php echo '"'.implode('","', $reportSummary).'"' ?>]; 
-                var userIdArray = [<?php echo '"'.implode('","', $userIdArray).'"' ?>]; 
+                // var userIdArray = [<!?php echo '"'.implode('","', $userIdArray).'"' ?>]; 
                 // var reportStatus = [<!--?php echo '"'.implode('","', $reportStatus).'"' ? -->]; 
                 //var imgArray = [<!--?php echo  json_encode(array_slice($imgArray, 2)); ?-->];
 
@@ -208,7 +208,7 @@
                 for(i =0; i<longArray.length; i++){
 
                     //lat and long must be in the begining to use for markers
-                    markerDescription[i] = [latArray[i],longArray[i], reportIdArray[i], userIdArray[i], catArray[i], reportSummary[i]];
+                    markerDescription[i] = [latArray[i],longArray[i], reportIdArray[i], catArray[i], reportSummary[i]];
 
                     console.log(markerDescription[i]);
                 }
@@ -275,9 +275,7 @@
             }
         </script>
 
-        <script async defer
-             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCB9kcH0PdYyVeYW-Ic3j7O8IbrGvHe5Jk&callback=initMap">
-        </script>
+        
 
 
 		<script>
@@ -308,7 +306,9 @@
 
 
 
-
+<script async defer
+             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCB9kcH0PdYyVeYW-Ic3j7O8IbrGvHe5Jk&callback=initMap">
+        </script>
 
 
 
