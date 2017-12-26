@@ -81,10 +81,10 @@
 				$imgArray = $row['image'];
 				$reportDate= $row['report_date'];
 				$reportDate= date("M jS, Y", strtotime($row['report_date']));
-                $userIdArray = $row['user_id'];
+                // $userIdArray = $row['user_id'];
                 $title = $row['report_title'];
-				$reportUpVote = $row['upVotes'];
-				$reportDownVote = $row['downVotes'];
+				// $reportUpVote = $row['upVotes'];
+				// $reportDownVote = $row['downVotes'];
 			}
 
         
@@ -391,9 +391,9 @@
 			var reportIdArray =  "<?php echo $reportIdArray; ?>";
 			var catArray = "<?php echo $catArray; ?>";
 			var reportSummary = "<?php echo $reportSummary; ?>";
-			var userIdArray = "<?php echo $userIdArray; ?>";
-			var reportUpVote = "<?php echo $reportUpVote; ?>";
-			var reportDownVote ="<?php echo $reportDownVote; ?>"; 
+			// var userIdArray = "<!?php echo $userIdArray; ?>";
+			// var reportUpVote = "<sc?php echo $reportUpVote; ?>";
+			// var reportDownVote ="<sc?php echo $reportDownVote; ?>"; 
 			var reportTitle = "<?php echo $title; ?>"; 
 			var reportDate = "<?php echo $reportDate; ?>"; 
 			
