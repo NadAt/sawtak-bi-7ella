@@ -1,27 +1,40 @@
 <?php
-$server = mysqli_connect("localhost", "root", "", "299v2");
+	$server = mysqli_connect("localhost", "root", "", "299v2");
 
-$location = $_REQUEST['location'];
-$category = $_REQUEST['category'];
+	$result = mysqli_query($server, "SELECT * 
+									FROM location l , report r, category c
+									WHERE l.Id = r.location_Id
+									And c.Id = r.category_id 
+									ORDER BY report_id DESC");
 
-$result = mysqli_query($server, "select report.report_text, report.image_id, report.location_id, report.report_date, category.category_name from report join category ON report.category_id=category.Id where report.category_id=4");
-
-$users = array();
-if (mysqli_num_rows($result) > 0) {
-	while ($row = mysqli_fetch_assoc($result)) {
-		$users[] = $row;
+	if($result->num_rows > 0){
+		$delimiter = ",";
+		$filename = "reports_" . date('Y-m-d') . ".csv";
+		
+		//create a file pointer
+		$f = fopen('php://memory', 'w');
+		
+		//set column headers
+		$fields = array('Report ID', 'Title', 'Text', 'Longitude', 'Latitude', 'Category', 'Date');
+		fputcsv($f, $fields, $delimiter);
+		
+		//output each row of the data, format line as csv and write to file pointer
+		while($row = $result->fetch_assoc()){
+			// $status = ($row['status'] == '1')?'Active':'Inactive';
+			$lineData = array($row['report_Id'], $row['report_title'], $row['report_text'], $row['longitude'], $row['latitude'], $row['category_name'], date("M jS, Y", strtotime($row['report_date'])));
+			fputcsv($f, $lineData, $delimiter);
+		}
+		
+		//move back to beginning of file
+		fseek($f, 0);
+		
+		//set headers to download file rather than displayed
+		header('Content-Type: text/csv');
+		header('Content-Disposition: attachment; filename="' . $filename . '";');
+		
+		//output all remaining data on a file pointer
+		fpassthru($f);
 	}
-}
-
-header('Content-Type: text/csv; charset=utf-8');
-header('Content-Disposition: attachment; filename=Report.csv');
-$output = fopen('php://output', 'w');
-fputcsv($output, array('report_text', 'image_id', 'location_id', 'report_date', 'category_name'));
-
-if (count($users) > 0) {
-	foreach ($users as $row) {
-		fputcsv($output, $row);
-	}
-}
+	exit;
 
 ?>

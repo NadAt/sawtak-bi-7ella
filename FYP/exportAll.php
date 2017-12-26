@@ -51,7 +51,7 @@
       <ul class="nav nav-pills nav-stacked">
         <li ><a href="homeAdmin.html">Home</a></li>
         <li class="active"><a href="prepareMaps.php">PrepareMaps</a></li>
-        <li><a href="analytics.php">Analytics/Statistics</a></li>
+        <!-- <li><a href="analytics.php">Analytics/Statistics</a></li> -->
         <li><a href="profile.html">Profile</a></li>
       </ul><br>
     </div>
@@ -117,8 +117,8 @@
 			$sqlString = "select * from report 
 			inner join location on location.Id = report.location_id 
 			inner join category on report.category_id = category.Id 
-			where true 
-			";
+			where true";
+
 			if(isset($_POST['exportLocation']) &&!empty($_POST['exportLocation'])){
 				$sqlString = $sqlString . " and location.address = '$location' ";
 			}
@@ -132,7 +132,7 @@
 				$sqlString = $sqlString . " and report.report_date <= '$endDate' ";
 			}
 			
-			echo $sqlString;
+			// echo $sqlString;
 			
 			$result = mysqli_query($server, $sqlString);
 			
@@ -140,8 +140,7 @@
 			$sqlString2 = "select * from report 
 			inner join location on location.Id = report.location_id 
 			inner join category on report.category_id = category.Id 
-			where approved = 1 and true 
-			";
+			where approved = 1 and true";
 			if(isset($_POST['exportLocation']) &&!empty($_POST['exportLocation'])){
 				$sqlString2 = $sqlString2 . " and location.address = '$location' ";
 			}
@@ -155,32 +154,23 @@
 				$sqlString2 = $sqlString2 . " and report.report_date <= '$endDate' ";
 			}
 			
-			echo $sqlString2;
+			// echo $sqlString2;
 			
 			$result2 = mysqli_query($server, $sqlString2);
-			
-			
-			#$retrieveLocationOfAll = mysqli_query($server, "SELECT location.latitude ,location.longitude, report.approved FROM location inner join report on location.Id = report.location_id where approved = 1");
 			
 			$re1 = array();
 			$re2 = array();
 			
-			#while ($row = mysqli_fetch_array($retrieveLocationOfAll)) {
-			#	$re1[] = $row['latitude'];
-			#	$re2[] = $row['longitude'];
-			#}
-		
-          
 			
 		?>
 		
 		<script>
-					function Export() {
-						var conf = confirm("Export users to CSV?");
-						if(conf == true) {
-							window.open("exportCSV.php", '_blank');
-						}
-					}
+			function Export() {
+				var conf = confirm("Export users to CSV?");
+				if(conf == true) {
+					window.open("exportCSV.php", '_blank');
+				}
+			}
 		</script>
 			
 		<div id="googleMap" style="width:100%;height:400px;"></div>
@@ -203,12 +193,13 @@
 			
 			<?php
 			
+			// $jsonArray = array();
 			while ($row = mysqli_fetch_array($result)) {
 				$id = $row['report_Id'];
 				   echo "<tr>";
 				   echo "<td><a href=\"MarkerPage/markerPage.php/?report=$id \">".$row["report_Id"]."</a></td>";
                    echo "<td>".$row["report_title"]."</td>";
-				   echo "<td>".$row["report_text"]."</td>";
+				   echo "<td>". wordwrap($row["report_text"],30,"<br>\n")."</td>";
                    echo "<td>".$row["category_name"]."</td>";
                    echo "<td>".$row["longitude"]."</td>";
 				   echo "<td>".$row["latitude"]."</td>";
@@ -216,13 +207,13 @@
 				   echo "<td>".$row["approved"]."</td>";
 				   echo "<td> <a href ='delete.php?Id=$id'><center>Delete</center></a>";
 				   echo "<td> <a href ='approve.php?Id=$id'><center>Approve</center></a>";
-                   echo "</tr>";
+				   echo "</tr>";
                } 
 			   while ($row = mysqli_fetch_array($result2)) {
 				    $re1[] = $row['latitude'];
-				$re2[] = $row['longitude'];
+					$re2[] = $row['longitude'];
 			   }
-			   
+
 			   ?>
 			
 			</tr>
@@ -281,7 +272,7 @@
             {imagePath: 'https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/images/m'});
 			
 			
-			}
+			}	
 		</script>
 		<script src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/data.json"></script>
 <script src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
@@ -292,24 +283,9 @@
 		
 		<button onclick="Export()" class="btn btn-primary">Export to csv</button>
 		
-
-		
     </div>
-	
-
-	
-
-
-
-
-	
   </div>
 </div>
-
-
-
-<!-- Contact Section -->
-
 
 
 <!-- Footer Section -->
